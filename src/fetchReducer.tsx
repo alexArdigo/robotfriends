@@ -7,7 +7,7 @@ type ACTIONS = {
 }
 type State = {
     loading: boolean
-    list: Robots[] | undefined
+    list?: Robots[]
     error: boolean
 }
 
@@ -19,7 +19,7 @@ export default function fetchReducer(state: State, action: ACTIONS): State {
                 list: [],
                 error: false,
             }
-        case "RESOLVE":
+        case "RESOLVE": 
             return {
                 loading: false,
                 list: action.payload,

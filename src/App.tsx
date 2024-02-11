@@ -1,5 +1,6 @@
 import './App.css';
 import "tachyons";
+import Scroll from "./Components/Scroll"
 import CardList from "./Components/CardList";
 import SearchBox from "./Components/SearchBox";
 import {useEffect, useReducer, useState} from "react";
@@ -49,7 +50,9 @@ const App = () => {
             {
                 state.loading
                     ? <h2>Loading...</h2>
-                : <CardList robots={state.list} search={search}/>
+                : <Scroll>
+                    <CardList robots={state.list} search={search}/>
+                </Scroll> 
             }
 
         </div>

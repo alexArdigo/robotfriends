@@ -13,7 +13,9 @@ const CardList = ({robots, search}: Props) => {
 
 
         return (
-            filteredRobots?.map(robot => {
+            <>
+            {
+                filteredRobots?.map(robot => {
                 return <Card
                     key={robot.id}
                     id={robot.id}
@@ -22,6 +24,9 @@ const CardList = ({robots, search}: Props) => {
                     username={robot.username}
                 />;
             })
+            }
+            </>
+            
 
         );
 }
